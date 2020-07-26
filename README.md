@@ -116,7 +116,7 @@
 - 字段名使用大写，下面的值则填写自己的值，总共12个，细心填写这关乎之后的成功与否
 
 - ```
-  # 设置如下secret字段
+  # 设置如下secret字段（请勿在value字段添加回车或者空格）
   """
   TEXT(学院专业班级信息)                例：林学院-林学(陶铸实验班)-2017林学(陶铸实验班)1班
   DEPTID(未知id字段)                   例：141670
@@ -142,6 +142,8 @@
 #### 3、开启Actions
 
 - 找到自己fork的库，点击Settings->Action->I understand...
+
+- 查看自己抓的包的customerid字段，修改17wanxiao.py中的customerid值（每个学校可能不同，请以你抓的包中数据为准）
 
 - 回到项目主页，修改README.md触发Actions
 
