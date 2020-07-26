@@ -27,7 +27,7 @@ areaStr = json.dumps(area, ensure_ascii=False)
 jsons = {"businessType": "epmpics", "method": "submitUpInfo",
         "jsonData": {"deptStr": {"deptid": deptId, "text": text},
                      "areaStr": areaStr,
-                     "reportdate": round(time.time()*1000), "customerid": "1999", "deptid": deptId, "source": "alipay",
+                     "reportdate": round(time.time()*1000), "customerid": "786", "deptid": deptId, "source": "alipay",
                      "templateid": "pneumonia", "stuNo": stuNum, "username": userName, "phonenum": phoneNum,
                      "userid": userId, "updatainfo": [{"propertyname": "bodyzk", "value": "正常温度(小于37.3)"},
                                                           {"propertyname": "istouchcb", "value": "自己家中"},
