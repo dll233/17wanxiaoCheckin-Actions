@@ -4,18 +4,18 @@ import json
 import requests
 
 
-# 健康打卡的URL地址
 check_url = "https://reportedh5.17wanxiao.com/sass/api/epmpics"
 
 text = input()
 deptId = eval(input())
 address = input()
 addtext = input()
-code = input()
+code = ''
 stuNum = input()
+print(stuNum,'*'*20)
 userName = input()
-phoneNum = input()
-userId = input()
+phoneNum = ''
+userId = int(input())
 emergency = input()
 emergencyPhone = input()
 sckey = input()
@@ -25,31 +25,36 @@ area = {'address': address, 'text': addtext, 'code': code}
 
 areaStr = json.dumps(area, ensure_ascii=False)
 
-# POST提交的json字段，根据自己的修改
 jsons = {"businessType": "epmpics", "method": "submitUpInfo",
         "jsonData": {"deptStr": {"deptid": deptId, "text": text},
                      "areaStr": areaStr,
                      "reportdate": round(time.time()*1000), "customerid": "786", "deptid": deptId, "source": "alipay",
                      "templateid": "pneumonia", "stuNo": stuNum, "username": userName, "phonenum": phoneNum,
-                     "userid": userId, "updatainfo": [{"propertyname": "bodyzk", "value": "正常温度(小于37.3)"},
-                                                          {"propertyname": "istouchcb", "value": "自己家中"},
-                                                          {"propertyname": "sfwz2", "value": "内地学生"},
-                                                          {"propertyname": "symptom", "value": "无"},
-                                                          {"propertyname": "homehealth", "value": "无"},
-                                                          {"propertyname": "isConfirmed", "value": "无"},
-                                                          {"propertyname": "ownbodyzk", "value": "良好"},
-                                                          {"propertyname": "ishborwh", "value": "无"},
-                                                          {"propertyname": "outdoor", "value": "绿色"},
-                                                          {"propertyname": "isContactFriendIn14", "value": "没有"},
-                                                          {"propertyname": "ownPhone", "value": phoneNum},
-                                                          {"propertyname": "emergencyContact", "value": emergency},
-                                                          {"propertyname": "mergencyPeoplePhone",
-                                                           "value": emergencyPhone}], "gpsType": 0}}
+                     "userid": userId, "updatainfo": [{"propertyname": "temperature", "value": "36.4"},
+                                                        {"propertyname": "symptom", "value": "无症状"},
+                                                        {"propertyname": "isConfirmed", "value": "  否"},
+                                                        {"propertyname": "isdefinde", "value": "否.未隔离"},
+                                                        {"propertyname": "isGoWarningAdress", "value": "否"},
+                                                        {"propertyname": "isTouch", "value": "否"},
+                                                        {"propertyname": "isTransitArea", "value": "否"},
+                                                        {"propertyname": "isTransitProvince", "value": "否"},
+                                                        {"propertyname": "isFFHasSymptom", "value": "没有"},
+                                                        {"propertyname": "isContactFriendIn14", "value": "没有"},
+                                                        {"propertyname": "xinqing", "value": "健康"},
+                                                        {"propertyname": "bodyzk", "value": "是"},
+                                                        {"propertyname": "cxjh", "value": "否"},
+                                                        {"propertyname": "isleaveaddress", "value": "否"},
+                                                        {"propertyname": "gtjz0511", "value": "否"},
+                                                        {"propertyname": "medicalObservation", "value": "绿色"},
+                                                        {"propertyname": "ownPhone", "value": phoneNum},
+                                                        {"propertyname": "emergencyContact", "value": emergency},
+                                                        {"propertyname": "mergencyPeoplePhone",
+                                                         "value": emergencyPhone}], "gpsType": 0}}
 
 response = requests.post(check_url, json=jsons)
-# 以json格式打印json字符串
 res = json.dumps(response.json(), sort_keys=True, indent=4, ensure_ascii=False)
 print(res)
+print(jsons)
 
 
 SCKEY = sckey
