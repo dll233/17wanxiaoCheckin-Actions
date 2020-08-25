@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master ]
   schedule:
-    - cron: 0 22 * * *
+    - cron: 00 22 * * * 
 
 jobs:
   build:
@@ -31,10 +31,8 @@ jobs:
         ${{secrets.DEPTID}}
         ${{secrets.ADDRESS}}
         ${{secrets.ADDTEXT}}
-        ${{secrets.CODE}}
         ${{secrets.STUNUM}}
         ${{secrets.USERNAME}}
-        ${{secrets.PHONENUM}}
         ${{secrets.USERID}}
         ${{secrets.EMERGENCY}}
         ${{secrets.EMERGENCYPHONE}}
