@@ -10,11 +10,12 @@ text = input()
 deptId = eval(input())
 address = input()
 addtext = input()
-code = input()
+code = ''
 stuNum = input()
+print(stuNum,'*'*20)
 userName = input()
-phoneNum = input()
-userId = input()
+phoneNum = ''
+userId = int(input())
 emergency = input()
 emergencyPhone = input()
 sckey = input()
@@ -53,6 +54,7 @@ jsons = {"businessType": "epmpics", "method": "submitUpInfo",
 response = requests.post(check_url, json=jsons)
 res = json.dumps(response.json(), sort_keys=True, indent=4, ensure_ascii=False)
 print(res)
+print(jsons)
 
 
 SCKEY = sckey
