@@ -1,10 +1,10 @@
-import time
-import datetime
-import json
-import requests
+//import time
+//import datetime
+//import json
+//import requests
 
 
-check_url = "https://reportedh5.17wanxiao.com/sass/api/epmpics"
+//check_url = "https://reportedh5.17wanxiao.com/sass/api/epmpics"
 
 text = input()
 deptId = eval(input())
@@ -25,7 +25,7 @@ area = {'address': address, 'text': addtext, 'code': code}
 
 areaStr = json.dumps(area, ensure_ascii=False)
 
-jsons = {"businessType": "epmpics", "method": "submitUpInfo",
+//jsons = {"businessType": "epmpics", "method": "submitUpInfo",
         "jsonData": {"deptStr": {"deptid": deptId, "text": text},
                      "areaStr": areaStr,
                      "reportdate": round(time.time()*1000), "customerid": "786", "deptid": deptId, "source": "alipay",
