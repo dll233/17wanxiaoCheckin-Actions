@@ -1,16 +1,16 @@
-import time
-import datetime
-import json
-import requests
+//import time
+//import datetime
+//import json
+//import requests
 
 
 check_url = "https://reportedh5.17wanxiao.com/sass/api/epmpics"
 
-text = input()
-deptId = eval(input())
-address = input()
-addtext = input()
-code = ''
+//text = input()
+//deptId = eval(input())
+//address = input()
+//addtext = input()
+//code = ''
 stuNum = input()
 print(stuNum,'*'*20)
 userName = input()
